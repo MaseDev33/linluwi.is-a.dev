@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Xiyav | Toki Pona Developer</title>
+  <meta name="description" content="The personal homepage of Xiyav, a Toki Pona developer who enjoys conlanging.">
+  <meta name="theme-color" content="#0a2c55">
+  <meta property="og:type" content="profile">
+  <meta property="og:title" content="Xiyav | Toki Pona Developer">
+  <meta property="og:description" content="The personal homepage of Xiyav, a Toki Pona developer who enjoys conlanging.">
+  <meta property="og:image" content="xiyav.jpg">
+  <meta property="og:image:alt" content="Xiyav's colorful profile mark">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Xiyav | Toki Pona Developer">
+  <meta name="twitter:description" content="The personal homepage of Xiyav, a Toki Pona developer who enjoys conlanging.">
+  <meta name="twitter:image" content="xiyav.jpg">
+  <meta name="twitter:image:alt" content="Xiyav's colorful profile mark">
+  <link rel="icon" type="image/jpeg" href="xiyav.jpg">
+  <style>
+    :root {
+      color-scheme: dark;
+      --ink: #e9f4ff;
+      --muted: #a9bfd4;
+      --line: rgba(149, 193, 229, .38);
+      --glass: rgba(13, 28, 53, .8);
+      --blue: #1c67a7;
+      --blue-dark: #0a2c55;
+      --pink: #ed4a9b;
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body { min-height: 100%; }
+
+    body {
+      margin: 0;
+      font-family: "Trebuchet MS", Verdana, sans-serif;
+      color: var(--ink);
+      background:
+        linear-gradient(125deg, rgba(12, 4, 31, .82), rgba(3, 47, 92, .68)),
+        url("xiyav.jpg") center / cover fixed;
+      background-color: #07152d;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: -50px;
+      z-index: -1;
+      background: inherit;
+      filter: blur(24px);
+      transform: scale(1.08);
+    }
+
+    a { color: #a9e1ff; }
+
+    .page {
+      width: min(900px, calc(100% - 28px));
+      margin: 36px auto 42px;
+      border: 1px solid rgba(176, 222, 255, .72);
+      background: rgba(7, 22, 47, .76);
+      box-shadow: 0 18px 54px rgba(0, 0, 0, .64), 0 0 0 5px rgba(5, 14, 31, .52);
+    }
+
+    .titlebar {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 60px;
+      padding: 9px 12px 9px 17px;
+      overflow: hidden;
+      background: linear-gradient(#65b5ed 0%, #2477bb 46%, #0a3e79 51%, #135b9b 100%);
+      border-bottom: 1px solid #052449;
+      text-shadow: 1px 2px 2px #082b50;
+    }
+
+    .titlebar::after {
+      content: "";
+      position: absolute;
+      inset: 0 0 52% 0;
+      background: linear-gradient(rgba(255,255,255,.44), rgba(255,255,255,0));
+      pointer-events: none;
+    }
+
+    .brand { position: relative; z-index: 1; }
+    .brand h1 { margin: 0; font-size: 25px; letter-spacing: .5px; }
+    .brand p { margin: 2px 0 0; color: #d8f2ff; font-size: 11px; }
+
+    .window-buttons { display: flex; gap: 4px; z-index: 1; }
+    .window-button {
+      width: 24px;
+      height: 20px;
+      padding: 0;
+      color: white;
+      font: bold 13px Verdana, sans-serif;
+      border: 1px solid #e7f7ff;
+      background: linear-gradient(#80c8f4, #1f6eae 52%, #0a376e);
+      box-shadow: inset 1px 1px rgba(255,255,255,.5), 1px 1px 1px #062951;
+    }
+
+    .nav {
+      display: flex;
+      gap: 3px;
+      padding: 6px 10px;
+      background: linear-gradient(#d8ecfb, #8eb8d7 48%, #4b7ea9 52%, #1c4c78);
+      border-bottom: 1px solid #061f3d;
+    }
+
+    .nav span {
+      padding: 3px 12px 4px;
+      color: #092b50;
+      font-size: 12px;
+      font-weight: bold;
+      border: 1px solid transparent;
+    }
+
+    .nav span:first-child {
+      color: #fff;
+      border-color: #15436b;
+      background: linear-gradient(#559bd0, #246193);
+      text-shadow: 1px 1px #16446d;
+    }
+
+    .content { padding: 22px; }
+
+    .intro {
+      display: grid;
+      grid-template-columns: 190px 1fr;
+      gap: 25px;
+      align-items: center;
+      padding-bottom: 22px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .portrait-frame {
+      padding: 7px;
+      border: 1px solid #b9ddf6;
+      background: linear-gradient(135deg, #edf9ff, #6e9fc2 45%, #164873 46%, #a9daf5);
+      box-shadow: inset 0 0 0 1px #214f78, 4px 4px 0 rgba(0,0,0,.28);
+    }
+
+    .portrait-frame img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 1;
+      object-fit: cover;
+      border: 1px solid #071a33;
+    }
+
+    .eyebrow {
+      margin: 0 0 5px;
+      color: #7fd7ff;
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+    }
+
+    .intro h2 { margin: 0; font-size: clamp(31px, 6vw, 48px); line-height: 1; text-shadow: 2px 3px 0 #061b36; }
+    .pronouns { margin: 8px 0 16px; color: var(--muted); font-size: 13px; }
+    .bio { max-width: 530px; margin: 0; color: #d7e8f6; font-size: 15px; line-height: 1.6; }
+
+    .section-heading {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 21px 0 11px;
+      color: #f2fbff;
+      font-size: 15px;
+      text-shadow: 1px 2px #061b36;
+    }
+
+    .section-heading::after { content: ""; height: 1px; flex: 1; background: linear-gradient(90deg, var(--line), transparent); }
+
+    .info-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+
+    .info-box {
+      min-height: 96px;
+      padding: 13px 14px;
+      border: 1px solid var(--line);
+      background: linear-gradient(145deg, rgba(66, 118, 165, .42), rgba(9, 26, 54, .82));
+      box-shadow: inset 0 1px rgba(255,255,255,.18), 2px 2px rgba(0,0,0,.2);
+    }
+
+    .info-box h3 { margin: 0 0 9px; color: #8cdcff; font-size: 11px; letter-spacing: 1px; text-transform: uppercase; }
+    .info-box p { margin: 0; color: #f0f8ff; font-size: 15px; line-height: 1.45; }
+    .info-box strong { color: #ff8fc5; font-weight: normal; }
+
+    .footer {
+      padding: 10px 18px;
+      color: #89a8c4;
+      font: 11px "Courier New", monospace;
+      text-align: right;
+      border-top: 1px solid rgba(171, 214, 243, .24);
+      background: rgba(2, 10, 25, .58);
+    }
+
+    @media (max-width: 620px) {
+      .page { width: calc(100% - 16px); margin: 12px auto 20px; }
+      .content { padding: 15px; }
+      .intro { grid-template-columns: 112px 1fr; gap: 15px; align-items: start; }
+      .portrait-frame { padding: 5px; }
+      .brand h1 { font-size: 20px; }
+      .titlebar { min-height: 53px; }
+      .window-buttons { display: none; }
+      .info-grid { grid-template-columns: 1fr; }
+      .info-box { min-height: auto; }
+    }
+
+    @media (max-width: 480px) {
+      body { background-attachment: scroll; }
+      .titlebar { padding-left: 12px; }
+      .brand h1 { font-size: 18px; }
+      .brand p { font-size: 10px; }
+      .nav { padding: 5px 7px; }
+      .nav span { flex: 1; padding: 7px 8px; text-align: center; }
+      .intro { display: block; text-align: center; }
+      .portrait-frame { width: min(156px, 55vw); margin: 0 auto 16px; }
+      .intro h2 { font-size: 40px; }
+      .pronouns { margin-bottom: 14px; }
+      .bio { text-align: left; font-size: 14px; line-height: 1.55; }
+      .section-heading { margin-top: 18px; }
+      .info-box { padding: 12px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header class="titlebar">
+      <div class="brand">
+        <h1>Xiyav's Homepage</h1>
+        <p>Welcome to my little corner of the web</p>
+      </div>
+      <div class="window-buttons" aria-hidden="true">
+        <button class="window-button" type="button">_</button>
+        <button class="window-button" type="button">□</button>
+        <button class="window-button" type="button">×</button>
+      </div>
+    </header>
+    <nav class="nav" aria-label="Page navigation">
+      <span>Profile</span>
+      <span>Interests</span>
+    </nav>
+
+    <section class="content">
+      <section class="intro" aria-labelledby="profile-title">
+        <div class="portrait-frame">
+          <img src="xiyav.jpg" alt="Xiyav's colorful profile mark">
+        </div>
+        <div>
+          <p class="eyebrow">Toki Pona Developer</p>
+          <h2 id="profile-title">Xiyav</h2>
+          <p class="pronouns">they / them</p>
+          <p class="bio">A developer who enjoys making small things for big ideas, exploring language, and finding elegant ways to say more with less.</p>
+        </div>
+      </section>
+
+      <h2 class="section-heading">About Xiyav</h2>
+      <div class="info-grid">
+        <article class="info-box">
+          <h3>Specialty</h3>
+          <p><strong>✦</strong> Toki Pona development</p>
+        </article>
+        <article class="info-box">
+          <h3>Spoken languages</h3>
+          <p>Toki Pona<br>English<br>Spanish</p>
+        </article>
+        <article class="info-box">
+          <h3>Hobbies</h3>
+          <p><strong>✦</strong> Conlanging</p>
+        </article>
+      </div>
+    </section>
+
+    <footer class="footer">best viewed with curiosity · © Xiyav</footer>
+  </main>
+</body>
+</html>
